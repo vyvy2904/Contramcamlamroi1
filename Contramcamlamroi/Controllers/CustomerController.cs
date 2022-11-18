@@ -29,7 +29,7 @@ namespace Contramcamlamroi.Controllers
             {
                 db.Customers.Add(cus);
                 db.SaveChanges();
-                return RedirectToAction("Index_Admin");
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -46,6 +46,11 @@ namespace Contramcamlamroi.Controllers
             db.Entry(name).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            return View(db.Customers.Where(s => s.IDCus == id).FirstOrDefault());
         }
     }
 }

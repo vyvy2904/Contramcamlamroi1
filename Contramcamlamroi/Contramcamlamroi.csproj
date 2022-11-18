@@ -261,9 +261,6 @@
     <Content Include="Views\Categories\CategoryPartial.cshtml" />
     <Content Include="Views\Product\SearchOption.cshtml" />
     <Content Include="Views\OrderDetail\GroupByTop5.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\OrderPro\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
@@ -272,6 +269,11 @@
     <Content Include="Views\Product\ProductList.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Product\Index_Admin.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

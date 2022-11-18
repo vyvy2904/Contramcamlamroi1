@@ -2,57 +2,57 @@
 
 @{
     ViewBag.Title = "RegisterUser";
-    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+
 <style>
     .field-validation-error {
         color: red;
     }
 
     .login-text h2 {
-        font-size: 30px;
+        font-size: 40px;
     }
 </style>
-<div style="margin-top: 20px;margin-left: 200px; border-radius: 15px; border: 2px solid #73AD21; width: 70%;height:600px;font-size:15px;text-align:left">
+<div style="margin-top: 10%; margin-left: 40%; border-radius: 15px; border: 2px solid #73AD21; width: 30%; height: auto; font-size: 20px;">
     <div class="login-text">
-        <h2 style="margin-left:100px">Đăng Kí</h2>
+        <h2>Đăng Kí</h2>
     </div>
-    <div style="margin-left:100px">
-        @using (Html.BeginForm("RegisterUser", "LoginUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+    @using (Html.BeginForm("RegisterUser", "LoginUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <p>Nhập ID</p>
+        <p>@Html.EditorFor(model => model.ID)</p>
+        <p>
+            @Html.ValidationMessageFor(model => model.ID)
+
+        </p>
+        if (ViewBag.ErrorRegister != null)
         {
-            @Html.AntiForgeryToken()
-            <p>@Html.LabelFor(model => model.ID)</p>
-            <p>@Html.EditorFor(model => model.ID)</p>
-            <p>
-                @Html.ValidationMessageFor(model => model.ID)
-
-            </p>
-            if (ViewBag.ErrorRegister != null)
-            {
-                <p>@ViewBag.ErrorRegister</p>
-
-            }
-            <p>@Html.LabelFor(model => model.NameUser)</p>
-            <p>@Html.EditorFor(model => model.NameUser)</p>
-            <p>@Html.ValidationMessageFor(model => model.NameUser)</p>
-
-            <p>@Html.LabelFor(model => model.RoleUser)</p>
-            <p>@Html.EditorFor(model => model.RoleUser)</p>
-            <p>@Html.ValidationMessageFor(model => model.RoleUser)</p>
-
-            <p>@Html.LabelFor(model => model.PasswordUser)</p>
-            <p>@Html.PasswordFor(model => model.PasswordUser)</p>
-            <p>@Html.ValidationMessageFor(model => model.PasswordUser)</p>
-
-            <p>@Html.LabelFor(model => model.ConfirmPass)</p>
-            <p>@Html.PasswordFor(model => model.ConfirmPass)</p>
-            <p>@Html.ValidationMessageFor(model => model.ConfirmPass)</p>
-
-            <input type="submit" value="Đăng Kí" class="btn btn-success" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" />
-
-
+            <p>@ViewBag.ErrorRegister</p>
 
         }
-    </div>
-</div>
+        <p>Tên Tài Khoản</p>
+        <p>@Html.EditorFor(model => model.NameUser)</p>
+        <p>@Html.ValidationMessageFor(model => model.NameUser)</p>
 
+        <p>Vị Trí</p>
+        <p>@Html.EditorFor(model => model.RoleUser)</p>
+        <p>@Html.ValidationMessageFor(model => model.RoleUser)</p>
+
+        <p>Nhập Mật Khẩu</p>
+        <p>@Html.PasswordFor(model => model.PasswordUser)</p>
+        <p>@Html.ValidationMessageFor(model => model.PasswordUser)</p>
+
+        <p>Nhập Lại Mật Khẩu</p>
+        <p>@Html.PasswordFor(model => model.ConfirmPass)</p>
+        <p>@Html.ValidationMessageFor(model => model.ConfirmPass)</p>
+
+        <input type="submit" value="Đăng Kí" class="btn btn-success" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" />
+
+
+
+    }
+</div>

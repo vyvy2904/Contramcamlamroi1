@@ -202,7 +202,7 @@
             <div class="navbar-collapse collapse" style="margin-left:25%;margin-top:3%;">
                 <ul class="nav navbar-nav">
                     <li><a href="@Url.Action("Index","Product")">Sản Phẩm</a></li>
-                    <li><a href="@Url.Action( "LoginAdmin", "Admin")"><span class="product-nav"></span>Kênh Người Bán</a></li>
+                    <li><a href="@Url.Action( "Index_Admin", "Product")"><span class="product-nav"></span>Kênh Người Bán</a></li>
                     <li><a href="@Url.Action("Contact", "Home")"><span class="product-nav"></span>Liên Hệ</a></li>
                 </ul>
 
@@ -230,7 +230,7 @@
             <div class="search-product-price" style="text-align: center;">
                 @using (Html.BeginForm("Search", "Product"))
                 {
-                    <input type="text" name="_name" placeholder="Bạn tìm cấy chi rứa?...">
+                    <input type="text" name="_name" placeholder="Bạn muốn tìm gì ?...">
                     <input type="submit" value="Tìm" style="background-color: green; color: white; border-color: white; border-style: solid; border-width: 1px; border-radius: 3px; background-color: lawngreen; -webkit-box-shadow: 0px 1px 4px rgb(0 0 0 / 20%); box-shadow: 0px 1px 4px rgb(0 0 0 / 20%); " />
                 }
                 <span style="float:right;">
@@ -246,7 +246,7 @@
     </div>
 
     <div class="row" style="margin-top:5%;height:auto;">
-        <div class="col-md-12" style="width:80%;margin-left:10%;">
+        <div class="col-md-12" style="width:100%;margin-left:0%;">
             <ul style="text-decoration:none;background-color:greenyellow;margin-top:20px;list-style-type:none;padding:10px;">
                 <li><a href="/OrderDetail/GroupByTop5" style="color:white;" id="animation-top5">Top 5 sản phẩm bán chạy nhất</a></li>
                 <li style="background-color:lightgray"></li>
@@ -256,7 +256,7 @@
             @{ Html.RenderAction("CategoryPartial", "Categories");}
         </div>
 
-        <div class="col-md-10" id="div-content" style="margin-left:-7%;">
+        <div class="col-md-10" id="div-content" style="margin-left: -230px;">
             <div class="slideshow-container">
 
             </div>
@@ -267,9 +267,13 @@
     @*@ <div class="div-footer">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </div>*@
-    @*@<footer style=" background-color: forestgreen;">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>*@
+    <div class="active" style="background-color:white;height:20px">
+
+    </div>
+    <footer style=" background-color: lightgreen;margin-bottom:-20px;height:40px;text-align:center">
+        <p>&copy; @DateTime.Now.Year - Liên Hệ : 1900 1234 5678 </p>
+    </footer>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

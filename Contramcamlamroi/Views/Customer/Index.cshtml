@@ -5,33 +5,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 style="padding:10px">KHÁCH HÀNG </h1>
+<h2>Index</h2>
 
-<p style="padding:10px; font-size:20px">
-    @Html.ActionLink("Thêm Khách Hàng Mới ", "Create", "Customer")
+<p>
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-bordered" style="border-width: thick;  margin-left: 10px; margin-right: 10px; font-size:17px">
+<table class="table">
     <tr>
-        <th> Mã Khách Hàng </th>
-        <th> Tên Khách Hàng</th>
-        <th> Số Điện Thoại </th>
-        <th> Email </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.IDCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailCus)
+        </th>
+        <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td> @Html.DisplayFor(modelItem => item.IDCus) </td>
-            <td> @Html.DisplayFor(modelItem => item.NameCus) </td>
-            <td> @Html.DisplayFor(modelItem => item.PhoneCus) </td>
-            <td> @Html.DisplayFor(modelItem => item.EmailCus) </td>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailCus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
-            <td>
-                @Html.ActionLink("Sửa", "Edit", "Customer") |
-                @Html.ActionLink("Chi tiết", "Details", "Customer") |
-                @Html.ActionLink("Xóa", "Delete", "Customer")|
-            </td>
-        </tr>
-    }
 </table>
