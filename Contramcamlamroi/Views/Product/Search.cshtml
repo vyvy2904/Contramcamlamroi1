@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Contramcamlamroi.Models.Product>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container" style="margin-top: 10px; margin-left: -6px;">
+
+    @foreach (var pro in Model)
+    {
+        <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card-pro">
+                @*<p> @Html.DisplayFor(model => pro.ProductID)</p>*@
+                <a href="/Product/ProductList/ @pro.ProductID"><img src="@Url.Content(pro.ImagePro)" height="150" width="150" margin-left: 10px; /></a>
+                <a href="/Product/ProductList/ @pro.ProductID"><p>@Html.DisplayFor(model => pro.NamePro)</p></a>
+                <p>@Html.DisplayFor(model => pro.Price)0 đ</p>
+
+                <a href="/ShoppingCart/AddToCart/ @pro.ProductID" class="btn btn-defaul" style="background-color: palegreen"> Mua Ngay </a>
+            </div>
+
+        </div>
+    }
+
+</div>
