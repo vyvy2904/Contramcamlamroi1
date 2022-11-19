@@ -274,6 +274,10 @@
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\OrderPro\Edit.cshtml" />
+    <Content Include="Views\OrderPro\Details.cshtml" />
+    <Content Include="Views\OrderPro\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

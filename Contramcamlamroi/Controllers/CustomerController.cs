@@ -36,21 +36,40 @@ namespace Contramcamlamroi.Controllers
                 return Content("Error Craete New");
             }
         }
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string name)
         {
-            return View(db.Customers.Where(s => s.IDCus == id).FirstOrDefault());
+            return View(db.Customers.Where(s => s.NameCus == name).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Edit(int id, Customer name)
+        public ActionResult Edit(string name, Customer cate)
         {
-            db.Entry(name).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(string name)
+        {
+            return View(db.Customers.Where(s => s.NameCus == name).FirstOrDefault());
+        }
+        public ActionResult Delete(int id)
         {
             return View(db.Customers.Where(s => s.IDCus == id).FirstOrDefault());
+        }
+        [HttpPost]
+        public ActionResult Delete(int id, Customer cate)
+        {
+            try
+            {
+                cate = db.Customers.Where(s => s.IDCus == id).FirstOrDefault();
+                db.Customers.Remove(cate);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return Content("This data is using in other table, Error Delete!");
+            }
         }
     }
 }

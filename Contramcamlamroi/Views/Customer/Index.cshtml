@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.EmailCus)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { name = item.NameCus }) |
+            @Html.ActionLink("Details", "Details", new { name = item.NameCus }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDCus })|
         </td>
     </tr>
 }

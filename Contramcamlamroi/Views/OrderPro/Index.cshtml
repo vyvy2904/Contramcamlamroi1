@@ -33,13 +33,10 @@
 
 
 
-
-
-
             <td>
-                @Html.ActionLink("Sửa", "Edit", "OrderPro") |
-                @Html.ActionLink("Chi tiết", "Details", "Ordepro") |
-                @Html.ActionLink("Xóa", "Delete", "OrderPro")|
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDCus }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDCus }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
             </td>
         </tr>
     }

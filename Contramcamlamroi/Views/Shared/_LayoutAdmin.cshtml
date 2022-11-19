@@ -82,6 +82,14 @@
             float: right;
             margin-right: -8px;
         }
+        #PasswordUser{
+            border-radius: 5px;
+            border: 2px solid #73AD21;
+        }
+        #ConfirmPass {
+            border-radius: 5px;
+            border: 2px solid #73AD21;
+        }
     </style>
 </head>
 <body>
@@ -126,12 +134,12 @@
             <div class="search-product-price" style="text-align: center">
                 @using (Html.BeginForm("Search", "Product"))
                 {
-                    <input type="text" name="_name" placeholder="Bạn tìm cấy chi rứa?...">
+                    <input type="text" name="_name" placeholder="Bạn muốn tìm gì ?...">
                     <input type="submit" value="Tìm" style="background-color: green; color: white; border-color: white; border-style: solid; border-width: 1px; border-radius: 3px; background-color: lawngreen; -webkit-box-shadow: 0px 1px 4px rgb(0 0 0 / 20%); box-shadow: 0px 1px 4px rgb(0 0 0 / 20%); " />
                 }
-                <span style="float:right;">
+                <span style="float:right; margin-top:-10px;">
                     <a href="/ShoppingCart/ShowCart">
-                        <img src="@Url.Content("~/Content/images/cart.png")" style="height:30px;width:30px;margin-top:10px;" />
+                        <img src="@Url.Content("~/Content/images/cart.png")" style="height: 30px; width: 30px; margin-top: 10px; margin-left: 20px;" />
                     </a>
                 </span>
                 @Html.Action("BagCart", "ShoppingCart")

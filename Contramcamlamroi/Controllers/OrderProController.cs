@@ -24,9 +24,9 @@ namespace Contramcamlamroi.Controllers
             return View(db.OrderProes.Where(s => s.IDCus == id).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Edit(int id, OrderPro name)
+        public ActionResult Edit(int id, Customer cate)
         {
-            db.Entry(name).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
